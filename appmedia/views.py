@@ -51,6 +51,8 @@ def serve(request, app, path, show_indexes=True):
 
                     return django_serve(request, path, document_root=media_dir, show_indexes=show_indexes)
                 continue
+    else:
+        raise Http404()
 
 
 def get_file(path):
